@@ -4,11 +4,11 @@ MONITOR=$(xrandr --listactivemonitors)
 
 MONITOR_SIZE=${#MONITOR}
 
-if [[ $MONITOR_SIZE -gt 60 ]]
+if [[ $MONITOR_SIZE -gt 65 ]]
 then
-	echo "turning off second monitor"
+	# turning off second display
 	xrandr --output HDMI-0 --off
 else
-	echo "joining displays"
+	# joining displays
 	xrandr --output HDMI-0 --mode 1366x768 --pos 1920x312
 fi
